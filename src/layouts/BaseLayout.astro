@@ -1,0 +1,36 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { site } from "../data/site.js";
+import asulLatin700 from "@fontsource/asul/files/asul-latin-700-normal.woff2?url";
+import cabinLatin400 from "@fontsource/cabin/files/cabin-latin-400-normal.woff2?url";
+import "../styles/global.css";
+
+const { title = site.title, description = site.description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="preload" href={asulLatin700} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={cabinLatin400} as="font" type="font/woff2" crossorigin />
+    <title>{title}</title>
+  </head>
+  <body class="flex min-h-screen flex-col bg-paper text-ink font-body">
+    <Header />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      if (document.querySelector("[data-hero], [data-split], [data-appear], [data-marquee]")) {
+        const { initPage } = await import("../lib/gsap.js");
+        initPage();
+      }
+    </script>
+  </body>
+</html>

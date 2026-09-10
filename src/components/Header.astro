@@ -1,0 +1,40 @@
+---
+import { nav, site } from "../data/site.js";
+
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+---
+
+<header class="sticky top-0 z-50 flex items-center justify-between gap-4 bg-blush px-4 py-3 text-paper md:px-8">
+  <a href="/" class="font-display text-lg font-bold uppercase tracking-display md:text-xl" data-astro-prefetch>
+    {site.name}
+  </a>
+
+  <nav class="hidden items-center gap-8 md:flex" aria-label="Primary">
+    {
+      nav.map((item) => (
+        <a
+          href={item.href}
+          data-astro-prefetch
+          class:list={["label text-[13px]", path.startsWith(item.href) && "underline underline-offset-4"]}
+        >
+          {item.label}
+        </a>
+      ))
+    }
+  </nav>
+
+  <a href={site.bookingUrl} class="label inline-flex items-center gap-2 text-[13px]" target="_blank" rel="noreferrer">
+    Book Now
+    <span aria-hidden="true">→</span>
+  </a>
+</header>
+
+<nav class="flex gap-5 overflow-x-auto bg-blush px-4 pb-3 text-paper md:hidden" aria-label="Mobile">
+  {
+    nav.map((item) => (
+      <a href={item.href} data-astro-prefetch class="label whitespace-nowrap text-[13px]">
+        {item.label}
+      </a>
+    ))
+  }
+</nav>

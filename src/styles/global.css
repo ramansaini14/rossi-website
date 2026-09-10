@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@import "@fontsource/asul/latin-700.css";
+@import "@fontsource/cabin/latin-400.css";
+@import "@fontsource/cabin/latin-700.css";
+@import "@fontsource/covered-by-your-grace/latin-400.css";
+
+@theme {
+  --font-display: "Asul", serif;
+  --font-body: "Cabin", sans-serif;
+  --font-script: "Covered By Your Grace", cursive;
+
+  --color-ink: #1a0910;
+  --color-paper: #f7f5f6;
+  --color-blush: #f05497;
+
+  --tracking-display: -0.08em;
+  --tracking-label: 0.01em;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-paper text-ink font-body antialiased;
+    font-synthesis: none;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-bold tracking-display;
+  }
+
+  img,
+  picture {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@utility label {
+  @apply font-body text-sm uppercase tracking-label;
+}
+
+@utility script {
+  @apply font-script uppercase text-blush;
+}
+
+[data-marquee-track] {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-marquee-track] {
+    transform: none !important;
+    will-change: auto;
+  }
+}

@@ -1,0 +1,7 @@
+---
+import { Picture } from "astro:assets";
+
+const { alt, formats = ["avif", "webp"], quality = 80, layout = "constrained", ...props } = Astro.props;
+---
+
+<Picture alt={alt} formats={formats} quality={quality} layout={layout} decoding="async" loading="lazy" {...props} />

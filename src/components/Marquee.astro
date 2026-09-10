@@ -1,0 +1,17 @@
+---
+const { items = [] } = Astro.props;
+const loop = [...items, ...items];
+---
+
+<div data-marquee class="overflow-hidden border-y border-ink/10">
+  <ul data-marquee-track class="flex w-max items-center py-3">
+    {
+      loop.map((item) => (
+        <li class="label flex items-center gap-8 px-4 whitespace-nowrap">
+          <span>{item}</span>
+          <span class="block h-px w-10 bg-ink/20" aria-hidden="true"></span>
+        </li>
+      ))
+    }
+  </ul>
+</div>
