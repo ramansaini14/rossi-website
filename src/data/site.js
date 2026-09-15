@@ -21,3 +21,15 @@ export const socials = [
   { href: "https://x.com", label: "X (Twitter)" },
   { href: "https://linkedin.com", label: "LinkedIn" },
 ];
+
+export const ticker = [
+  "Styled Hair",
+  "Clean Structure",
+  "Intentional Design",
+  "Controlled Texture",
+  "Balanced Form",
+  "Modern Silhouette",
+  "Soft Contrast",
+  "Personal Craft",
+  "Precision Work",
+];

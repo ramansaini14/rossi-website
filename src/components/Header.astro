@@ -4,8 +4,14 @@ import { nav, site } from "../data/site.js";
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 ---
 
-<header class="sticky top-0 z-50 flex items-center justify-between gap-4 bg-blush px-4 py-3 text-paper md:px-8">
-  <a href="/" class="font-display text-lg font-bold uppercase tracking-display md:text-xl" data-astro-prefetch>
+<header
+  class="sticky top-0 z-50 flex items-center justify-between gap-4 bg-blush px-1 py-1 text-black md:px-6"
+>
+  <a
+    href="/"
+    class="font-display text-2xl font-bold uppercase tracking-display md:text-2xl"
+    data-astro-prefetch
+  >
     {site.name}
   </a>
 
@@ -15,7 +21,10 @@ const path = Astro.url.pathname.replace(/\/$/, "") || "/";
         <a
           href={item.href}
           data-astro-prefetch
-          class:list={["label text-[13px]", path.startsWith(item.href) && "underline underline-offset-4"]}
+          class:list={[
+            "label text-[13px]",
+            path.startsWith(item.href) && "underline underline-offset-4",
+          ]}
         >
           {item.label}
         </a>
@@ -23,16 +32,60 @@ const path = Astro.url.pathname.replace(/\/$/, "") || "/";
     }
   </nav>
 
-  <a href={site.bookingUrl} class="label inline-flex items-center gap-2 text-[13px]" target="_blank" rel="noreferrer">
-    Book Now
-    <span aria-hidden="true">→</span>
+  <a
+    href={site.bookingUrl}
+    target="_blank"
+    rel="noreferrer"
+    class="group label relative inline-flex items-center gap-2 pb-1"
+  >
+    {/* Text Wrapper */}
+    <span class="relative inline-block overflow-hidden leading-none">
+      {/* Line 1 — visible (old text) */}
+      <span
+        class="block transition-transform duration-300 ease-out group-hover:-translate-y-full"
+      >
+        Book Now
+      </span>
+      {/* Line 2 — new text slides in from below */}
+      <span
+        class="absolute inset-0 block translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0"
+      >
+        Book Now
+      </span>
+    </span>
+
+    {/* Icon Wrapper */}
+    <span class="relative inline-block overflow-hidden leading-none w-4 h-4">
+      {/* Icon 1 — old arrow slides out right */}
+      <span
+        class="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-out group-hover:translate-x-full"
+      >
+        →
+      </span>
+      {/* Icon 2 — new arrow slides in from left */}
+      <span
+        class="absolute inset-0 flex items-center justify-center -translate-x-full transition-transform duration-300 ease-out group-hover:translate-x-0"
+      >
+        →
+      </span>
+    </span>
+
+    {/* Single underline spanning text + arrow */}
+    <span class="absolute left-0 bottom-0 h-px w-full bg-current"></span>
   </a>
 </header>
 
-<nav class="flex gap-5 overflow-x-auto bg-blush px-4 pb-3 text-paper md:hidden" aria-label="Mobile">
+<nav
+  class="flex gap-5 overflow-x-auto bg-blush px-4 pb-3 text-paper md:hidden"
+  aria-label="Mobile"
+>
   {
     nav.map((item) => (
-      <a href={item.href} data-astro-prefetch class="label whitespace-nowrap text-[13px]">
+      <a
+        href={item.href}
+        data-astro-prefetch
+        class="label whitespace-nowrap text-[13px]"
+      >
         {item.label}
       </a>
     ))
