@@ -1,0 +1,52 @@
+<div
+        class="group flex h-[206px] items-center justify-center bg-[#1a0910] transition-colors duration-300 hover:bg-[#f05497]"
+    >
+        <h1
+            class="flex items-center gap-6 font-display text-[4.2rem] uppercase text-[#f5f2f0] transition-colors duration-300 group-hover:text-[#1a0910]"
+        >
+            Book Now
+            <!-- Changed w-4 h-4 to w-12 h-12 here -->
+            <span
+                class="relative inline-block overflow-hidden leading-none w-12 h-12"
+            >
+                {/* Icon 1 — old arrow slides out right */}
+                <span
+                    class="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-out group-hover:translate-x-full"
+                >
+                    <!-- Changed w-4 h-4 to w-12 h-12 here -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-12 h-12"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+                    </svg>
+                </span>
+                {/* Icon 2 — new arrow slides in from left */}
+                <span
+                    class="absolute inset-0 flex items-center justify-center -translate-x-full transition-transform duration-300 ease-out group-hover:translate-x-0"
+                >
+                    <!-- Changed w-4 h-4 to w-12 h-12 here -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-12 h-12"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+                    </svg>
+                </span>
+            </span>
+        </h1>
+    </div>

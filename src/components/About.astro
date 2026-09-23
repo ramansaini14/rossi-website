@@ -1,0 +1,389 @@
+---
+import BookNowButton from "./BookNowButton.astro";
+import ReachOut from "./ReachOut.astro";
+---
+
+<!-- Main Split Layout Container -->
+<div class="flex items-start">
+    <div class="flex-1 md:sticky md:top-6 md:self-start">
+        <section
+            class="relative w-full flex flex-col justify-center overflow-hidden"
+        >
+            <div class="my-6 mx-6 bg-[#EBE9EA] px-6 pb-6">
+                <!-- Top Section: Heading -->
+                <div class="relative text-center mb-16 md:mb-24 z-10 mt-10">
+                    <!-- Script Label (ABOUT ME) — moved slightly to the right -->
+                    <span
+                        class="block font-script text-2xl md:text-3xl text-[#f05497] rotate-[-4deg] translate-x-8 md:translate-x-12"
+                    >
+                        About Me
+                    </span>
+
+                    <!-- Main Heading -->
+                    <div class="relative inline-block">
+                        <h2
+                            class="font-display text-[3.5rem] md:text-[5rem] lg:text-[4.5rem] font-bold uppercase leading-[0.9] tracking-tight text-[#1a0910]"
+                        >
+                            I'm Sofia –<br />Hair Stylist
+                        </h2>
+                    </div>
+
+                    <!-- Script Label (INDEPENDENT) — moved slightly to the left -->
+                    <span
+                        class="block font-script text-2xl md:text-3xl text-[#f05497] rotate-[-4deg] -translate-x-26 md:-translate-x-30"
+                    >
+                        Independent
+                    </span>
+                </div>
+
+                <!-- Middle Section: Scattered Polaroid Images -->
+                <div
+                    class="relative w-full flex items-center justify-center mb-16 md:mb-24"
+                >
+                    <!-- Image 1: Left (Cityscape) -->
+                    <div>
+                        img 1
+                    </div>
+
+                    <!-- Image 2: Right (Woman with curlers) -->
+                    <div>
+                        img 2
+                    </div>
+                </div>
+
+                <!-- Bottom Section: Text & Button -->
+                <div class="w-full flex flex-col items-center z-10">
+                    <!-- Bio Text -->
+                    <p
+                        class="text-center font-sans text-base md:text-lg text-[#1a0910] leading-relaxed mb-10 max-w-md"
+                    >
+                        I focus on natural texture, balanced shape,<br />
+                        and hair that feels effortless every day.
+                    </p>
+
+                    <!-- Contact Button -->
+                    <a
+                        href="#"
+                        class="group flex w-full items-center justify-center gap-4 bg-[#1a0910] py-5 px-6 transition-colors duration-300 hover:bg-[#f05497]"
+                    >
+                        <span
+                            class="font-display text-2xl md:text-3xl font-bold uppercase text-[#f5f2f0] tracking-wide transition-colors duration-300 group-hover:text-[#1a0910]"
+                        >
+                            Contact Me
+                        </span>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="2"
+                            stroke="currentColor"
+                            class="w-6 h-6 md:w-8 md:h-8 text-[#f5f2f0] transition-all duration-300 group-hover:text-[#1a0910] group-hover:translate-x-2"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="flex-1 w-full py-6 pr-6">
+        <!-- Top Section: Foundation -->
+        <div class="relative w-full mb-24 md:mb-40">
+            <!-- Top Left Label -->
+            <p
+                class="text-[11px] md:text-xs uppercase tracking-widest text-[#1a0910] mb-20 md:mb-32"
+            >
+                Foundation
+            </p>
+
+            <!-- Text Paragraph (left) and Book Now (right) -->
+            <div
+                class="relative flex flex-col md:flex-row md:justify-between md:items-start gap-6 mb-16 md:mb-6"
+            >
+                <!-- Paragraph with small vertical line accent -->
+                <div class="relative max-w-md">
+                    <!-- Vertical line -->
+                    <p
+                        class="text-base md:text-lg leading-relaxed text-[#1a0910]"
+                    >
+                        I began with a curiosity about shape, texture, and
+                        natural beauty. Over time, it developed into a practice
+                        shaped by patience and attention to detail.
+                    </p>
+                </div>
+
+                <!-- Book Now Link -->
+                <a
+                    href="#"
+                    class="group inline-flex items-center gap-2 border-b border-[#1a0910] pb-1 text-xs md:text-sm uppercase tracking-widest text-[#1a0910] hover:text-[#f05497] hover:border-[#f05497] transition-colors shrink-0 md:mt-2"
+                >
+                    Book Now
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-4 h-4 transition-transform group-hover:translate-x-1"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Two Images (Asymmetric layout) -->
+            <div class="relative w-full">
+                <!-- Left Image (larger, top-aligned) -->
+                <div class="w-[65%] md:w-[30%] aspect-[3/4] bg-white">
+                    <img
+                        src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&auto=format&fit=crop&q=80"
+                        alt="Portrait 1"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <!-- Right Image (smaller, offset down and right) -->
+                <div
+                    class="absolute top-[40%] right-0 w-[55%] md:w-[34%] aspect-[4/3] bg-white"
+                >
+                    <img
+                        src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800&auto=format&fit=crop&q=80"
+                        alt="Portrait 2"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Section: Practice -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
+            <!-- Left Label -->
+            <div>
+                <p
+                    class="text-[11px] md:text-xs uppercase tracking-widest text-[#1a0910]"
+                >
+                    Practice
+                </p>
+            </div>
+            <div>
+                <!-- Right Paragraph -->
+                <p
+                    class="text-base md:text-lg leading-relaxed text-[#1a0910] max-w-md"
+                >
+                    With years of experience, I evolved my approach to be calm,
+                    precise, and personal. Working closely with each client
+                    helped me understand how hair should not only look good, but
+                    also feel natural.
+                </p>
+            </div>
+            <div></div>
+        </div>
+
+        <div class="flex justify-center w-full">
+            <div
+                class="w-[280px] md:w-[380px] aspect-[3/4] bg-white overflow-hidden"
+            >
+                <img
+                    src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&auto=format&fit=crop&q=80"
+                    alt="Portrait 1"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+        </div>
+
+        <div class="relative w-full py-16 md:py-24">
+            <!-- Top Spacing (represents the bottom of the previous image) -->
+            <div class="mb-24 md:mb-32"></div>
+
+            <!-- Main Content Row -->
+            <div
+                class="flex flex-col md:flex-row md:items-start md:justify-between gap-12 md:gap-8 px-6 md:px-10"
+            >
+                <!-- Left Column: Label, Text, and Link -->
+                <div class="w-full md:w-1/2 md:max-w-md flex flex-col">
+                    <!-- Section Label -->
+                    <p
+                        class="text-[11px] md:text-xs uppercase tracking-widest text-[#1a0910] mb-6"
+                    >
+                        Present
+                    </p>
+
+                    <!-- Paragraph -->
+                    <p
+                        class="text-base md:text-lg leading-relaxed text-[#1a0910] mb-8"
+                    >
+                        Today, my work centers on structure, natural movement,
+                        and lasting results. Each service is thoughtful and
+                        tailored to create balanced, effortless hair.
+                    </p>
+
+                    <!-- Book Now Link -->
+                    <a
+                        href="#"
+                        class="group inline-flex items-center gap-2 border-b border-[#1a0910] pb-1 text-xs md:text-sm uppercase tracking-widest text-[#1a0910] w-fit hover:text-[#f05497] hover:border-[#f05497] transition-colors"
+                    >
+                        Book Now
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="w-4 h-4 transition-transform group-hover:translate-x-1"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Right Column: Image -->
+                <div class="w-full md:w-[40%] lg:w-[35%] flex justify-end">
+                    <div
+                        class="w-[280px] md:w-full aspect-[4/5] bg-white overflow-hidden"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&auto=format&fit=crop&q=80"
+                            alt="Portrait with double buns"
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full px-6 md:px-10 py-16 md:py-24">
+            <!-- ===================== AWARDS ===================== -->
+            <section class="w-full mb-32 md:mb-48">
+                <p class="text-[11px] md:text-xs uppercase tracking-widest text-[#1a0910] mb-6">
+                    Awards
+                </p>
+                <div class="flex flex-col">
+                    <div class="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-2 md:gap-6 items-center border-t border-[#1a0910]/30 py-5 md:py-6">
+                        <span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">Italian Hair Awards</span>
+                        <span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">Best Color</span>
+                        <span class="text-sm md:text-base text-[#1a0910] font-medium tabular-nums md:text-right">2026</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-2 md:gap-6 items-center border-t border-[#1a0910]/30 py-5 md:py-6">
+                        <span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">Milan Beauty Awards</span>
+                        <span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">Best Styling</span>
+                        <span class="text-sm md:text-base text-[#1a0910] font-medium tabular-nums md:text-right">2025</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-2 md:gap-6 items-center border-t border-[#1a0910]/30 py-5 md:py-6">
+                        <span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">International Hair Awards</span>
+                        <span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">Creative Color</span>
+                        <span class="text-sm md:text-base text-[#1a0910] font-medium tabular-nums md:text-right">2025</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-2 md:gap-6 items-center border-t border-[#1a0910]/30 py-5 md:py-6">
+                        <span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">European Hair Awards</span>
+                        <span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">Rising Talent</span>
+                        <span class="text-sm md:text-base text-[#1a0910] font-medium tabular-nums md:text-right">2025</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-2 md:gap-6 items-center border-t border-b border-[#1a0910]/30 py-5 md:py-6">
+                        <span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">Italian Style Awards</span>
+                        <span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">Best Texture</span>
+                        <span class="text-sm md:text-base text-[#1a0910] font-medium tabular-nums md:text-right">2024</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== FEATURED WITH ===================== -->
+            <section class="w-full mb-32 md:mb-48">
+                <p class="text-[11px] md:text-xs uppercase tracking-widest text-[#1a0910] mb-6">
+                    Featured With
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 lg:gap-x-24">
+                    <div class="flex flex-col">
+                        <div class="border-t border-[#1a0910]/30 py-5 md:py-6"><span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">Studio Milano</span></div>
+                        <div class="border-t border-[#1a0910]/30 py-5 md:py-6"><span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">Luce Creative Studio</span></div>
+                        <div class="border-t border-[#1a0910]/30 py-5 md:py-6"><span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">Atelier Beauty</span></div>
+                        <div class="border-t border-[#1a0910]/30 py-5 md:py-6"><span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">Linea Hair & Beauty</span></div>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="border-t border-[#1a0910]/30 py-5 md:py-6"><span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">Vero Creative</span></div>
+                        <div class="border-t border-[#1a0910]/30 py-5 md:py-6"><span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">Studio Forma Milano</span></div>
+                        <div class="border-t border-[#1a0910]/30 py-5 md:py-6"><span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">Nova Beauty Lab</span></div>
+                        <div class="border-t border-[#1a0910]/30 py-5 md:py-6"><span class="text-sm md:text-base uppercase tracking-wide text-[#1a0910] font-medium">Milano Style Collective</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== PHILOSOPHY ===================== -->
+            <section class="w-full mb-32 md:mb-48">
+                <p class="text-[11px] md:text-xs uppercase tracking-widest text-[#1a0910] mb-12 md:mb-16">
+                    Philosophy
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 lg:gap-x-24 gap-y-12 md:gap-y-16">
+                    <div>
+                        <h3 class="font-display text-2xl md:text-3xl font-bold uppercase text-[#1a0910] mb-3">Balance</h3>
+                        <p class="text-sm md:text-base leading-relaxed text-[#1a0910]">Balance comes from proportion, shape, and natural movement.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-2xl md:text-3xl font-bold uppercase text-[#1a0910] mb-3">Form</h3>
+                        <p class="text-sm md:text-base leading-relaxed text-[#1a0910]">The work follows natural texture and movement for a soft result.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-2xl md:text-3xl font-bold uppercase text-[#1a0910] mb-3">Precision</h3>
+                        <p class="text-sm md:text-base leading-relaxed text-[#1a0910]">Careful shaping and clean detail create structure that truly lasts.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-2xl md:text-3xl font-bold uppercase text-[#1a0910] mb-3">Simplicity</h3>
+                        <p class="text-sm md:text-base leading-relaxed text-[#1a0910]">Clean, refined hair created to be effortless and wearable every day.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-2xl md:text-3xl font-bold uppercase text-[#1a0910] mb-3">Personal</h3>
+                        <p class="text-sm md:text-base leading-relaxed text-[#1a0910]">Every look is formed around the individual and their unique texture.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-2xl md:text-3xl font-bold uppercase text-[#1a0910] mb-3">Longevity</h3>
+                        <p class="text-sm md:text-base leading-relaxed text-[#1a0910]">Hair designed to grow naturally and stay perfectly balanced.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== VALUES ===================== -->
+            <section class="w-full">
+                <p class="text-[11px] md:text-xs uppercase tracking-widest text-[#1a0910] mb-6">
+                    Values
+                </p>
+                <div class="flex flex-col mb-16 md:mb-24">
+                    <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4 md:gap-16 items-center border-t border-[#1a0910]/30 py-5 md:py-8">
+                        <span class="font-display text-5xl md:text-7xl font-bold text-[#1a0910] leading-none">10+</span>
+                        <p class="text-sm md:text-base leading-relaxed text-[#1a0910] max-w-xs md:max-w-sm">Years of experience shaped by careful and consistent work.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4 md:gap-16 items-center border-t border-[#1a0910]/30 py-5 md:py-8">
+                        <span class="font-display text-5xl md:text-7xl font-bold text-[#1a0910] leading-none">95%</span>
+                        <p class="text-sm md:text-base leading-relaxed text-[#1a0910] max-w-xs md:max-w-sm">Years of experience shaped by careful and consistent work.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4 md:gap-16 items-center border-t border-b border-[#1a0910]/30 py-5 md:py-8">
+                        <span class="font-display text-5xl md:text-7xl font-bold text-[#1a0910] leading-none">9.8</span>
+                        <p class="text-sm md:text-base leading-relaxed text-[#1a0910] max-w-xs md:max-w-sm">Years of experience shaped by careful and consistent work.</p>
+                    </div>
+                </div>
+
+                <div class="w-full aspect-[16/10] md:aspect-[16/9] overflow-hidden bg-white">
+                    <img
+                        src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=1600&auto=format&fit=crop&q=80"
+                        alt="Woman with curlers holding a plush toy"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<div>
+    <BookNowButton />
+</div>
+<div>
+    <ReachOut />
+</div>

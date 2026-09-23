@@ -1,5 +1,56 @@
+---
+import BookNowButton from "./BookNowButton.astro";
+import ReachOut from "./ReachOut.astro";
+---
+
 <div
-    class="relative flex flex-col items-center justify-center overflow-hidden bg-paper text-ink"
+    class="w-full py-16 px-6 flex flex-col md:flex-row md:items-center md:justify-between gap-12"
 >
-    contact
+    <!-- Left Column (Large Heading) -->
+    <div class="w-full md:w-1/2">
+        <h2
+            class="font-display text-[5rem] md:text-[6rem] lg:text-[7rem] font-bold uppercase leading-[0.85] tracking-tight text-[#1a0910]"
+        >
+            Get in<br />Touch
+        </h2>
+    </div>
+
+    <!-- Right Column (Text & Link) -->
+    <div class="w-full md:w-1/2 md:flex md:justify-center">
+        <div class="max-w-[280px]">
+            <p
+                class="font-sans text-sm md:text-base leading-[1.5] text-[#1a0910] mb-6"
+            >
+                For bookings and inquiries,<br />
+                feel free to reach out anytime.
+            </p>
+
+            <a
+                href="#"
+                class="group inline-flex items-center gap-2 border-b border-[#1a0910] pb-1 text-[11px] md:text-xs uppercase tracking-widest text-[#1a0910] hover:text-[#f05497] hover:border-[#f05497] transition-colors duration-300"
+            >
+                Send a Message
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+<ReachOut />
+<div class="pt-[4px]">
+    <BookNowButton />
+</div>
+<div>
+show images 
 </div>

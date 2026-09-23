@@ -1,0 +1,155 @@
+---
+import ServiceSection from "./ServiceSection.astro";
+import { Cuts, colorItems, bridalItems } from "../data/site.js";
+import spacer from "../assets/spacer.jpg";
+import { site, ticker } from "../data/site.js";
+import Expect from "./Expect.astro";
+import BookNowButton from "./BookNowButton.astro";
+import ReachOut from "./ReachOut.astro";
+---
+
+<div class="relative w-full min-h-screen overflow-hidden pt-16 md:pt-24 pb-32">
+    <!-- Top Section: Headings -->
+    <div class="relative z-10 w-full px-6 md:px-16">
+        <!-- Left Heading (SIGNATURE SERVICES) -->
+        <div class="relative w-fit">
+            <h2
+                class="font-display text-[4rem] md:text-[6rem] lg:text-[7rem] font-bold uppercase leading-[0.85] tracking-tight text-[#1a0910]"
+            >
+                Signature<br />Services
+            </h2>
+            <!-- Script Label (PRO) — sits to the right of "SERVICES" -->
+            <span
+                class="absolute bottom-14 right-30 translate-x-12 md:translate-x-20 font-script text-lg md:text-2xl text-[#f05497] rotate-[-6deg]"
+            >
+                PRO
+            </span>
+        </div>
+
+        <!-- Right Heading (AND APPROACH) -->
+        <div
+            class="relative w-fit ml-auto mt-12 md:mt-0 md:absolute md:top-20 md:right-16"
+        >
+            <!-- Vertical Line -->
+
+            <h2
+                class="font-display text-[4rem] md:text-[6rem] lg:text-[8rem] font-bold uppercase leading-[0.85] tracking-tight text-[#1a0910] text-right"
+            >
+                And<br />Approach
+            </h2>
+            <!-- Script Label (PERSONAL) — sits under "APPROACH" -->
+            <span
+                class="absolute -bottom-4 right-0 md:right-105 font-script text-lg md:text-2xl text-[#f05497] rotate-[-4deg] top-55"
+            >
+                PERSONAL
+            </span>
+        </div>
+    </div>
+
+    <!-- Side Labels -->
+    <div
+        class="absolute left-6 md:left-16 top-[50%] md:top-[50%] uppercase z-30"
+    >
+        <p class="text-[10px] leading-3 text-[#1a0910] tracking-wider">
+            Expertise
+        </p>
+        <p
+            class="text-[13px] leading-4 text-[#1a0910] font-medium tracking-wide"
+        >
+            Hair & Color
+        </p>
+    </div>
+
+    <div
+        class="absolute right-6 md:right-16 top-[50%] md:top-[50%] text-right uppercase z-30"
+    >
+        <p class="text-[10px] leading-3 text-[#1a0910] tracking-wider">
+            Process
+        </p>
+        <p
+            class="text-[13px] leading-4 text-[#1a0910] font-medium tracking-wide"
+        >
+            Personal & Calm
+        </p>
+    </div>
+
+    <!-- Center Image Cluster -->
+    <div
+        class="relative w-full max-w-6xl mx-auto flex items-center justify-center mt-20 md:mt-60"
+    >
+        <!-- Spacer to reserve layout height (matching center image) -->
+        <div
+            class="w-[240px] md:w-[340px] h-[320px] md:h-[450px] opacity-0 pointer-events-none"
+        >
+        </div>
+
+        <!-- Image 1: Left (Woman in patterned top) -->
+        <div
+            class="absolute w-[200px] md:w-[280px] h-[260px] md:h-[370px] bg-white p-2 shadow-2xl rotate-[-6deg] translate-x-[-65%] md:translate-x-[-75%] translate-y-[8%] z-20 transition-transform duration-500 hover:z-50 hover:scale-[1.03]"
+        >
+            <img
+                src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=600&auto=format&fit=crop&q=80"
+                alt="Portrait Left"
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+        <!-- Image 2: Center (Makeup products) — ON TOP of Image 1 -->
+        <div
+            class="absolute w-[220px] md:w-[320px] h-[300px] md:h-[420px] bg-white p-2 shadow-2xl rotate-[2deg] translate-y-[-8%] z-30 transition-transform duration-500 hover:z-50 hover:scale-[1.03]"
+        >
+            <img
+                src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&auto=format&fit=crop&q=80"
+                alt="Makeup"
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+        <!-- Image 3: Right (Woman in black) — OVERLAPS center image -->
+        <div
+            class="absolute w-[200px] md:w-[300px] h-[270px] md:h-[390px] bg-white p-2 shadow-2xl rotate-[8deg] translate-x-[65%] md:translate-x-[70%] translate-y-[12%] z-40 transition-transform duration-500 hover:z-50 hover:scale-[1.03]"
+        >
+            <img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&auto=format&fit=crop&q=80"
+                alt="Portrait Right"
+                class="w-full h-full object-cover"
+            />
+        </div>
+    </div>
+</div>
+<div class="bg-[#EBE9EA]">
+    <ServiceSection title={"Cuts &\nStyling"} items={Cuts} />
+    <ServiceSection title={"Color &\n Highlights"} items={colorItems} />
+    <ServiceSection title={"Bridal &\n Event Hair"} items={bridalItems} />
+</div>
+<div>
+    <img src={spacer.src} />
+</div>
+<div class="w-full overflow-hidden border-y border-ink py-4">
+    <div
+        class="flex w-max animate-[ticker_30s_linear_infinite] items-center whitespace-nowrap"
+    >
+        {
+            /* 1. Duplicate the array 4 times to guarantee it fills the screen */
+            [...ticker, ...ticker].map((item, index) => (
+                <div key={index} class="flex items-center">
+                    <span class="text-sm uppercase">{item}</span>
+                    <div
+                        class="framer-v100r8 mx-4 h-[1px] w-15 bg-ink"
+                        data-framer-name="Divider"
+                    />
+                </div>
+            ))
+        }
+    </div>
+</div>
+
+<div>
+    <Expect />
+</div>
+<div>
+    <BookNowButton />
+</div>
+<div>
+    <ReachOut />
+</div>
