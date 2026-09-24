@@ -1,0 +1,196 @@
+---
+import { works } from "../data/site.js";
+
+export async function getStaticPaths() {
+    return works.map((work) => ({
+        params: { slug: work.slug },
+        props: { work },
+    }));
+}
+
+const { work } = Astro.props;
+
+// Left column: 3 stacked images that reveal on scroll
+const allWorks = works;
+const currentIndex = allWorks.findIndex((w) => w.slug === work.slug);
+const gallery = [
+    work.src.src,
+    allWorks[(currentIndex + 1) % allWorks.length].src.src,
+    allWorks[(currentIndex + 2) % allWorks.length].src.src,
+];
+---
+
+<div class="flex items-start gap-8 p-6">
+    <!-- Left column: stacked images -->
+    <div class="flex-1 relative">
+        <div class="sticky top-8 space-y-8">
+            {
+                gallery.map((src, i) => (
+                    <div class="overflow-hidden reveal" data-index={i}>
+                        <img
+                            src={src}
+                            alt={`${work.title} gallery image ${i + 1}`}
+                            class="w-full h-auto object-cover"
+                            loading="lazy"
+                        />
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+
+    <!-- Right column: work data -->
+    <div class="flex-1 text-neutral-900">
+        <a
+            href="/work"
+            class="inline-flex items-center gap-2 text-[0.9rem] uppercase text-neutral-900 no-underline pb-1 border-b border-neutral-900 mb-20 hover:opacity-60 transition-opacity"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-4 h-4 shrink-0"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
+            </svg>
+            <span>Back to Works</span>
+        </a>
+
+        <h1
+            class="w-1/2 text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tight mb-16 whitespace-pre-line"
+        >
+            {work.title}
+        </h1>
+
+        <dl class="m-0 uppercase">
+            <!-- TYPE -->
+            <div
+                class="grid grid-cols-[280px_1fr] gap-x-8 py-5 border-t border-neutral-200"
+            >
+                <dt class="m-0 text-neutral-900 text-xs">Type</dt>
+                <dd class="m-0 text-neutral-900 leading-relaxed text-sm">
+                    {work.type}
+                </dd>
+            </div>
+
+            <!-- CATEGORY -->
+            <div
+                class="grid grid-cols-[280px_1fr] gap-x-8 py-5 border-t border-neutral-200"
+            >
+                <dt class="m-0 text-neutral-900 text-xs">Category</dt>
+                <dd class="m-0 text-neutral-900 leading-relaxed text-sm">
+                    {work.category}
+                </dd>
+            </div>
+
+            <!-- DATE -->
+            <div
+                class="grid grid-cols-[280px_1fr] gap-x-8 py-5 border-t border-neutral-200"
+            >
+                <dt class="m-0 text-neutral-900 text-xs">Date</dt>
+                <dd class="m-0 text-neutral-900 leading-relaxed text-sm">
+                    {work.date}
+                </dd>
+            </div>
+
+            <!-- TECHNIQUES -->
+            <div
+                class="grid grid-cols-[280px_1fr] gap-x-8 py-5 border-t border-neutral-200"
+            >
+                <dt class="m-0 text-neutral-900 text-xs">Techniques</dt>
+                <dd class="m-0 text-neutral-900 leading-relaxed text-sm">
+                    <!-- Veil Highlighting<br />
+                    Lowlight Balancing<br />
+                    Root Shadow<br />
+                    Neutral Gloss Toning -->
+                    {
+                        work.techniques.map((technique) => (
+                            <span class="block">{technique}</span>
+                        ))
+                    }
+                </dd>
+            </div>
+
+            <!-- FOCUS -->
+            <div
+                class="grid grid-cols-[280px_1fr] gap-x-8 py-5 border-t border-neutral-200"
+            >
+                <dt class="m-0 text-neutral-900 text-xs">Focus</dt>
+                <dd class="m-0 text-neutral-900 leading-relaxed text-sm">
+                    {work.focus}
+                </dd>
+            </div>
+
+            <!-- RESULT -->
+            <div
+                class="grid grid-cols-[280px_1fr] gap-x-8 py-5 border-t border-neutral-200"
+            >
+                <dt class="m-0 text-neutral-900 text-xs">Result</dt>
+                <dd class="m-0 text-neutral-900 leading-relaxed text-sm">
+                    {work.result}
+                </dd>
+            </div>
+
+            <!-- OVERVIEW -->
+            <div
+                class="grid grid-cols-[280px_1fr] gap-x-8 py-5 border-t border-neutral-200"
+            >
+                <dt class="m-0 text-neutral-900 text-xs">Overview</dt>
+                <div>
+                    <dd
+                        class="m-0 text-neutral-900 normal-case tracking-normal text-lg leading-[1.55] max-w-[42ch]"
+                    >
+                        {work.overview}
+                    </dd>
+                    {
+                        work.image2 && (
+                            <img
+                                src={work.image2.src}
+                                alt={`${work.title} gallery image`}
+                                class="w-full h-auto object-cover"
+                                loading="lazy"
+                            />
+                        )
+                    }
+                </div>
+            </div>
+            <!-- Approach -->
+            <div
+                class="grid grid-cols-[280px_1fr] gap-x-8 py-5 border-t border-neutral-200"
+            >
+                <dt class="m-0 text-neutral-900 text-xs">Approach</dt>
+                <div>
+                    <dd
+                        class="m-0 text-neutral-900 normal-case tracking-normal text-lg leading-[1.55] max-w-[42ch] pb-10"
+                    >
+                        {work.approach}
+                    </dd>
+                    <a
+                        href="/work"
+                        class="inline-flex items-center gap-2 text-[0.9rem] uppercase text-neutral-900 no-underline pb-1 border-b border-neutral-900 mb-20 hover:opacity-60 transition-opacity"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="w-4 h-4 shrink-0"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
+                        </svg>
+                        <span>Back to Works</span>
+                    </a>
+                </div>
+            </div>
+        </dl>
+    </div>
+</div>

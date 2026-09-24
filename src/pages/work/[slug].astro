@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Work from "../../components/Work.astro";
+import { works } from "../../data/site.js";
+
+export async function getStaticPaths() {
+  return works.map((work) => ({
+    params: { slug: work.slug },
+    props: { work },
+  }));
+}
+
+const { work } = Astro.props;
+---
+
+<BaseLayout>
+  <Work work={work} />
+</BaseLayout>
