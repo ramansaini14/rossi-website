@@ -2,8 +2,17 @@
 
 // ---- Work image imports ----
 import mywork1 from "../assets/mywork1.jpg";
+import mywork1Sub1 from "../assets/mywork1-2.jpg";
+import mywork1Sub2 from "../assets/mywork1-3.jpg";
+import mywork1Sub3 from "../assets/mywork1-4.jpg";
 import mywork2 from "../assets/mywork2.jpg";
+import mywork2Sub1 from "../assets/mywork2-2.jpg";
+import mywork2Sub2 from "../assets/mywork2-3.jpg";
+import mywork2Sub3 from "../assets/mywork2-4.jpg";
 import mywork3 from "../assets/mywork3.jpg";
+import mywork3Sub1 from "../assets/mywork3-2.jpg";
+import mywork3Sub2 from "../assets/mywork3-3.jpg";
+import mywork3Sub3 from "../assets/mywork3-4.jpg";
 import mywork4 from "../assets/mywork4.jpg";
 import mywork5 from "../assets/mywork5.jpg";
 import mywork6 from "../assets/mywork6.jpg";
@@ -92,8 +101,8 @@ export const works = [
     slug: "natural-texture-for-elena",
     title: "Natural Texture for Elena",
     src: mywork1,
-    image2: mywork2,
-    images: [mywork1, mywork2, mywork3], // 3 images shown on scroll
+    image2: mywork1Sub3,
+    images: [mywork1, mywork1Sub1, mywork1Sub2], // 3 images shown on scroll
     alt: "Low sleek styled hair portrait",
     date: "March 26",
     category: "Cuts & Styling",
@@ -108,7 +117,8 @@ export const works = [
     slug: "soft-crop-for-maya",
     title: "Soft Crop for Maya",
     src: mywork2,
-    images: [mywork2, mywork3, mywork4],
+    images: [mywork2, mywork2Sub1, mywork2Sub2],
+    image2: mywork2Sub3,
     alt: "Soft movement styled hair",
     date: "February 24",
     category: "Color & Highlights",
@@ -123,7 +133,8 @@ export const works = [
     slug: "copper-veil-for-isabella",
     title: "Copper Veil for Isabella",
     src: mywork3,
-    images: [mywork3, mywork4, mywork5],
+    image2: mywork3Sub3,
+    images: [mywork3, mywork3Sub1, mywork3Sub2],
     alt: "Sculpted texture hair portrait",
     date: "February 15",
     category: "Color & Highlights",

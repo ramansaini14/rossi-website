@@ -9,15 +9,6 @@ export async function getStaticPaths() {
 }
 
 const { work } = Astro.props;
-
-// Left column: 3 stacked images that reveal on scroll
-const allWorks = works;
-const currentIndex = allWorks.findIndex((w) => w.slug === work.slug);
-const gallery = [
-    work.src.src,
-    allWorks[(currentIndex + 1) % allWorks.length].src.src,
-    allWorks[(currentIndex + 2) % allWorks.length].src.src,
-];
 ---
 
 <div class="flex items-start gap-8 p-6">
@@ -25,10 +16,10 @@ const gallery = [
     <div class="flex-1 relative">
         <div class="sticky top-8 space-y-8">
             {
-                gallery.map((src, i) => (
+                work.images.map((src, i) => (
                     <div class="overflow-hidden reveal" data-index={i}>
                         <img
-                            src={src}
+                            src={src.src}
                             alt={`${work.title} gallery image ${i + 1}`}
                             class="w-full h-auto object-cover"
                             loading="lazy"
@@ -143,7 +134,7 @@ const gallery = [
                 <dt class="m-0 text-neutral-900 text-xs">Overview</dt>
                 <div>
                     <dd
-                        class="m-0 text-neutral-900 normal-case tracking-normal text-lg leading-[1.55] max-w-[42ch]"
+                        class="m-0 text-neutral-900 normal-case tracking-normal text-lg leading-[1.55] max-w-[42ch] pb-10"
                     >
                         {work.overview}
                     </dd>
@@ -174,20 +165,20 @@ const gallery = [
                         href="/work"
                         class="inline-flex items-center gap-2 text-[0.9rem] uppercase text-neutral-900 no-underline pb-1 border-b border-neutral-900 mb-20 hover:opacity-60 transition-opacity"
                     >
+                        <span>book now</span>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke-width="1.5"
                             stroke="currentColor"
-                            class="w-4 h-4 shrink-0"
+                            class="w-4 h-4"
                         >
                             <path
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
-                                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
                         </svg>
-                        <span>Back to Works</span>
                     </a>
                 </div>
             </div>
